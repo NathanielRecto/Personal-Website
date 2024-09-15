@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/4df13367b2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/Nathaniel-9-14-2024 (2).png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-content">
+          <div class="header-text">
+            <p>Computer Engineer Student</p>
+            <h1>Hi, I'm <span class="name">Nathaniel</span><br />Recto</h1>
+            <div class="social-icons">
+              <a href="images/Nathaniel Recto - Computer Engineer Resume.pdf"
+                ><i class="fa fa-file"></i
+              ></a>
+              <a href="https://github.com/NathanielRecto/"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/nathaniel-recto/"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+          <div>
+            <img src="images/IMG_0736 (5).jpg" class="header-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--About ME-->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/IMG_0736 (5).jpg" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <br />
+            <p>
+              I am a Computer Engineering student at Toronto Metropolitan
+              University with a passion for solving complex engineering problems
+              and creating impactful software solutions. I have developed a
+              strong foundation in software design, machine learning, and
+              circuit design, and would love to take these skills in real-world
+              scenarios.
+              <br />
+              <br />
+              While professionally focused on computer engineering, I balance my
+              time with activities such as exercising, playing basketball, and
+              chess, and reading novels, all of which contribute to my personal
+              growth and well-being.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Languages</span><br />HTML/CSS, C/C++, Java, Matlab,
+                  Python
+                </li>
+                <li>
+                  <span>Developer Tools</span><br />VS Code, Visual Studio, Git,
+                  Github, Quartus II
+                </li>
+                <li>
+                  <span>Hardware</span><br />VHDL, Arduino Uno, Multisim,
+                  Oscilloscope
+                </li>
+                <li>
+                  <span>Core Competencies</span><br />Engineering Algorithms and
+                  Data Structures, Object Oriented Eng Analysis and Design
+                </li>
+                <li>
+                  <span>Productivity Tools</span><br />MS Office (Excel, Word,
+                  Powerpoint), Google Workspace (Docs, Sheets, Slides)
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <div class="date-container">
+                    <span>Operations Support, <i>Enercare Inc.</i></span>
+                    <span class="date"><i>May 2024 - Aug 2024</i></span>
+                  </div>
+                  <ul>
+                    <li class="custom-bullet">
+                      Collaborated with cross-functional teams to resolve HVAC
+                      contract deficiencies, <br />enhancing operational
+                      efficiency and customer satisfaction.
+                    </li>
+                    <li class="custom-bullet">
+                      Optimized invoicing processes by managing payments to
+                      contractors, reducing <br />
+                      processing time by 20% and ensuring timely compensation.
+                    </li>
+                    <li class="custom-bullet">
+                      Performed administrative tasks and served as a primary
+                      contact, improving <br />communication and increasing team
+                      productivity by 15%.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <div class="date-container">
+                    <span>Toronto Metropolitan University</span>
+                    <span class="date"><i>Sept 2022 - May 2026</i></span>
+                  </div>
+                  (B.Eng) Computer Engineering
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Portfolio-->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/404106ee5a_50185170_fpga.jpg" />
+            <div class="layer">
+              <h3>General-Purpose 8-Bit Processor Design</h3>
+              <p>
+                FPGA-based ALU core design and integration for diverse
+                arithmetic/logical operations on 8-bit inputs.
+              </p>
+              <a
+                href="https://github.com/NathanielRecto/GeneralPurpose8-BitProcessorDesign"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/single-stage-bb-test (1).jpg" />
+            <div class="layer">
+              <h3>Multistage Amplifier Design</h3>
+              <p>
+                Designed and simulated a single-supply, multistage, inverting
+                transistor amplifier that adhere certain specifications, using
+                Multisim.
+              </p>
+              <a
+                href="https://github.com/NathanielRecto/Multistage-Amplifier-Design"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img
+              src="images/premium_photo-1661301075857-63868ae88c00 (1).jpg"
+            />
+            <div class="layer">
+              <h3>Bank Account Application</h3>
+              <p>
+                The app connects you to the talented people around the world.
+                Download it from play store.
+              </p>
+              <a
+                href="https://github.com/NathanielRecto/Bank-Account-Application"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <a href="https://github.com/NathanielRecto/" class="btn">See More</a>
+      </div>
+    </div>
+    <!--Contact-->
+    <div id="contact">
+      <div class="contact">
+        <div class="container">
+          <div class="row">
+            <div class="contact-left">
+              <h1 class="sub-title">Contact Me</h1>
+              <p><i class="fa-solid fa-paper-plane"></i> nrecto@torontomu.ca</p>
+              <p><i class="fa-solid fa-phone"></i> (905)-409-3880</p>
+              <div class="social-icons">
+                <a href="https://github.com/NathanielRecto/"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+                <a href="https://www.linkedin.com/in/nathaniel-recto/"
+                  ><i class="fa-brands fa-linkedin"></i
+                ></a>
+              </div>
+              <a
+                href="images/Nathaniel Recto - Computer Engineer Resume.pdf"
+                download
+                class="btn btn2"
+                >Download CV</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tabs Management Script -->
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (var tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (var tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+    <!-- Side Menu Script -->
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
