@@ -3,11 +3,11 @@ This is my own Personal Website, showcasing my background, skills and portfolio 
 ## About the Project
 This website serves as a digtial resume and portfolio, highlighting my education, experience, and skills in software and hardware engineering. It also provides links to my social profiles, allowing for easy access to my resume, GitHub, and Linkedln.
 ## Languages and Tools used
-- HTML: Structuring the content of the website.
-- CSS: Stlying and responsive design.
-- JavaScript: For dynamic elements and interactivity.
-- FontAwesome: Icons for social media and external links.
-- Poppins Font: Clean and modern typography.
+- **HTML:** Structuring the content of the website.
+- **CSS:** Stlying and responsive design.
+- **JavaScript:** For dynamic elements and interactivity.
+- **FontAwesome:** Icons for social media and external links.
+- **Poppins Font:** Clean and modern typography.
 ## Feaetures
 - **Responsive Design:** Smooth scroll and hover effects.
 - **Downloadable Resume:** PDF link to my resume for easy access.
