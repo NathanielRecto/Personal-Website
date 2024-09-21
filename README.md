@@ -8,7 +8,7 @@ This website serves as a digtial resume and portfolio, highlighting my education
 - **JavaScript:** For dynamic elements and interactivity.
 - **FontAwesome:** Icons for social media and external links.
 - **Poppins Font:** Clean and modern typography.
-## Feaetures
+## Features
 - **Responsive Design:** Smooth scroll and hover effects.
 - **Downloadable Resume:** PDF link to my resume for easy access.
 - **Portfolio Section:** Displays my projects with image hover effects.
