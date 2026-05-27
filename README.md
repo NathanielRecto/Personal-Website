@@ -15,5 +15,5 @@ This website serves as a digtial resume and portfolio, highlighting my education
 - **Contact Information:** Links to social media profiles and contact form.
 ## Contact
 Feel free to reach out via:
-- **Email:** nrecto@torontomu.ca
+- **Email:** nrecto.0225@gmail.com
 - **Linkedln:** [Nathaniel Recto](https://www.linkedin.com/in/nathaniel-recto/)
