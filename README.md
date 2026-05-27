@@ -1,10 +1,10 @@
 # Personal Portfolio Website
 This is my own Personal Website, showcasing my background, skills, and portfolio as a Computer Engineering student. Feel free to check it out! [Website](https://nathaniel-recto.vercel.app/)
 ## About the Project
-This website serves as a digtial resume and portfolio, highlighting my education, experience, and skills in software and hardware engineering. It also provides links to my social profiles, allowing for easy access to my resume, GitHub, and Linkedln.
+This website serves as a digital resume and portfolio, highlighting my education, experience, and skills in software and hardware engineering. It also provides links to my social profiles, allowing for easy access to my resume, GitHub, and LinkedIn.
 ## Languages and Tools used
 - **HTML:** Structuring the content of the website.
-- **CSS:** Stlying and responsive design.
+- **CSS:** Styling and responsive design.
 - **JavaScript:** For dynamic elements and interactivity.
 - **FontAwesome:** Icons for social media and external links.
 - **Poppins Font:** Clean and modern typography.
@@ -16,4 +16,4 @@ This website serves as a digtial resume and portfolio, highlighting my education
 ## Contact
 Feel free to reach out via:
 - **Email:** nrecto.0225@gmail.com
-- **Linkedln:** [Nathaniel Recto](https://www.linkedin.com/in/nathaniel-recto/)
+- **LinkedIn:** [Nathaniel Recto](https://www.linkedin.com/in/nathaniel-recto/)
