@@ -2,260 +2,796 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nathaniel Recto's Personal Website</title>
+    <title>Nathaniel Recto · Computer Engineer</title>
+    <meta
+      name="description"
+      content="Nathaniel Recto, Computer Engineer (TMU). Machine learning, computer vision and embedded systems: from YOLO models running live on an iPhone to processors written in VHDL."
+    />
+    <meta property="og:title" content="Nathaniel Recto · Computer Engineer" />
+    <meta
+      property="og:description"
+      content="ML, computer vision and embedded systems projects by Nathaniel Recto."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#06070b" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" type="icon" href="images/developer.png" />
-    <script
-      src="https://kit.fontawesome.com/4df13367b2.js"
-      crossorigin="anonymous"
-    ></script>
+
+    <!-- Lets the CSS hide reveal-on-scroll content only when JavaScript is running -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="script.js" defer></script>
   </head>
+
   <body>
-    <div id="header">
-      <div class="container">
-        <nav>
-          <img src="images/Nathaniel-9-14-2024 (2).png" class="logo" />
-          <ul id="sidemenu">
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <i class="fas fa-times" onclick="closemenu()"></i>
-          </ul>
-          <i class="fas fa-bars" onclick="openmenu()"></i>
-        </nav>
-        <div class="header-content">
-          <div class="header-text">
-            <p>Computer Engineer Student</p>
-            <h1>Hi, I'm <span class="name">Nathaniel</span><br />Recto</h1>
-            <div class="social-icons">
-              <a
-                href="images/Nathaniel Recto - Comp Eng Resume (2).docx (2).pdf"
-                download
-                ><i class="fa fa-file"></i
-              ></a>
-              <a href="https://github.com/NathanielRecto/"
-                ><i class="fa-brands fa-github"></i
-              ></a>
-              <a href="https://www.linkedin.com/in/nathaniel-recto/"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
-            </div>
-          </div>
-          <div>
-            <img src="images/IMG_0736 (5).jpg" class="header-img" />
-          </div>
-        </div>
+    <!-- Icon sprite: each icon is reused below with <svg><use href="#i-name" /></svg> -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="i-github" viewBox="0 0 24 24">
+        <path
+          d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57l-.02-2.04c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"
+        />
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24">
+        <path
+          d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"
+        />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="m22 7-10 6L2 7" />
+      </symbol>
+      <symbol id="i-file" viewBox="0 0 24 24">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3" />
+      </symbol>
+      <symbol id="i-arrow-ur" viewBox="0 0 24 24">
+        <path d="M7 17 17 7M7 7h10v10" />
+      </symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24">
+        <path d="M12 5v14M19 12l-7 7-7-7" />
+      </symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="m6 9 6 6 6-6" />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24">
+        <path d="M22 10 12 5 2 10l10 5 10-5z" />
+        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="2" y="7" width="20" height="14" rx="2" />
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ========== Header / navigation ========== -->
+    <header class="site-header" id="site-header">
+      <a href="#home" class="logo" aria-label="Nathaniel Recto, back to top">nathaniel<span>.</span></a>
+
+      <nav class="nav-pill" aria-label="Primary">
+        <a href="#home" data-nav="home" class="active">Home</a>
+        <a href="#about" data-nav="about">About</a>
+        <a href="#experience" data-nav="experience">Experience</a>
+        <a href="#skills" data-nav="skills">Skills</a>
+        <a href="#projects" data-nav="projects">Projects</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn" href="https://www.linkedin.com/in/nathaniel-recto/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg class="ico ico-fill"><use href="#i-linkedin" /></svg>
+        </a>
+        <a class="icon-btn" href="https://github.com/NathanielRecto" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg class="ico ico-fill"><use href="#i-github" /></svg>
+        </a>
+        <a class="btn btn-outline btn-sm" href="#contact">Let's Connect</a>
       </div>
-    </div>
-    <!--About ME-->
-    <div id="about">
-      <div class="container">
-        <div class="row">
-          <div class="about-col-1">
-            <img src="images/IMG_0736 (5).jpg" />
-          </div>
-          <div class="about-col-2">
-            <h1 class="sub-title">About Me</h1>
-            <br />
-            <p>
-              I am a Computer Engineering student at Toronto Metropolitan
-              University with a passion for solving complex engineering problems
-              and creating impactful software solutions. I have developed a
-              strong foundation in software design, machine learning, and
-              circuit design, and would love to take these skills in real-world
-              scenarios.
-              <br />
-              <br />
-              While professionally focused on computer engineering, I balance my
-              time with activities such as exercising, playing basketball, and
-              chess, and reading novels, all of which contribute to my personal
-              growth and well-being.
+
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="ico ico-open"><use href="#i-menu" /></svg>
+        <svg class="ico ico-close"><use href="#i-x" /></svg>
+      </button>
+    </header>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <div class="mobile-menu-social">
+        <a class="icon-btn" href="https://www.linkedin.com/in/nathaniel-recto/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg class="ico ico-fill"><use href="#i-linkedin" /></svg>
+        </a>
+        <a class="icon-btn" href="https://github.com/NathanielRecto" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg class="ico ico-fill"><use href="#i-github" /></svg>
+        </a>
+        <a class="icon-btn" href="mailto:nrecto.0225@gmail.com" aria-label="Email">
+          <svg class="ico"><use href="#i-mail" /></svg>
+        </a>
+      </div>
+    </nav>
+
+    <main id="main">
+      <!-- ========== Hero ========== -->
+      <section id="home" class="hero">
+        <div class="hero-grid-bg" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <p class="status-chip">
+              <span class="pulse" aria-hidden="true"></span>
+              Open to ML, computer vision &amp; software roles
             </p>
-            <div class="tab-titles">
-              <p class="tab-links active-link" onclick="opentab('skills')">
-                Skills
-              </p>
-              <p class="tab-links" onclick="opentab('experience')">
-                Experience
-              </p>
-              <p class="tab-links" onclick="opentab('education')">Education</p>
+
+            <h1 class="hero-name">
+              <span>Nathaniel</span>
+              <span class="grad">Recto</span>
+            </h1>
+
+            <p class="hero-role" aria-label="Computer Engineer: machine learning, computer vision and embedded systems">
+              <span aria-hidden="true">
+                <span class="prompt">&gt;</span>
+                <span
+                  id="typed"
+                  data-words='["Computer Engineer", "ML & Computer Vision", "Embedded & FPGA Systems", "iOS & Android Builder"]'
+                  >Computer Engineer</span
+                ><span class="caret"></span>
+              </span>
+            </p>
+
+            <p class="hero-lede">
+              I build things that see, sense and compute: from YOLO models running live on an iPhone to
+              processors written in VHDL.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#projects">
+                View my work
+                <svg class="ico"><use href="#i-arrow-down" /></svg>
+              </a>
+              <a class="btn-link" href="assets/Nathaniel-Recto-Resume.pdf" download>
+                <svg class="ico"><use href="#i-file" /></svg>
+                Download résumé
+              </a>
             </div>
-            <div class="tab-contents active-tab" id="skills">
-              <ul>
-                <li>
-                  <span>Languages</span><br />HTML/CSS, JavaScript, C/C++, Java,
-                  Matlab, Python, Assembly
-                </li>
-                <li>
-                  <span>Developer Tools</span><br />VS Code, Visual Studio, Git,
-                  Github, Quartus II
-                </li>
-                <li>
-                  <span>Hardware</span><br />VHDL, Arduino Uno, Multisim,
-                  Oscilloscope
-                </li>
-                <li>
-                  <span>Core Competencies</span><br />Engineering Algorithms and
-                  Data Structures, Object Oriented Eng Analysis and Design
-                </li>
-                <li><span>Platforms</span><br />Windows, Linux (Unix)</li>
-                <li>
-                  <span>Productivity Tools</span><br />MS Office (Excel, Word,
-                  Powerpoint), Google Workspace (Docs, Sheets, Slides)
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="experience">
-              <ul>
-                <li>
-                  <div class="date-container">
-                    <span>Operations Support, <i>Enercare Inc.</i></span>
-                    <span class="date"><i>May 2024 - Aug 2024</i></span>
-                  </div>
-                  <ul>
-                    <li class="custom-bullet">
-                      Collaborated with cross-functional teams to resolve HVAC
-                      contract deficiencies, <br />enhancing operational
-                      efficiency and customer satisfaction.
-                    </li>
-                    <li class="custom-bullet">
-                      Optimized invoicing processes by managing payments to
-                      contractors, reducing <br />
-                      processing time by 20% and ensuring timely compensation.
-                    </li>
-                    <li class="custom-bullet">
-                      Performed administrative tasks and served as a primary
-                      contact, improving <br />communication and increasing team
-                      productivity by 15%.
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="education">
-              <ul>
-                <li>
-                  <div class="date-container">
-                    <span>Toronto Metropolitan University</span>
-                    <span class="date"><i>Sept 2022 - May 2026</i></span>
-                  </div>
-                  (B.Eng) Computer Engineering
-                </li>
-              </ul>
-            </div>
+          </div>
+
+          <div class="hero-photo">
+            <button class="photo-btn" id="photo-btn" type="button" aria-haspopup="dialog" aria-controls="whoami">
+              <span class="photo-wrap">
+                <img src="assets/profile.jpg" alt="Portrait of Nathaniel Recto" width="1499" height="1526" />
+              </span>
+              <span class="photo-hint">
+                <svg class="ico"><use href="#i-arrow-up" /></svg>
+                click to learn more
+              </span>
+            </button>
           </div>
         </div>
-      </div>
-    </div>
-    <!--Portfolio-->
-    <div id="portfolio">
-      <div class="container">
-        <h1 class="sub-title">My Projects</h1>
-        <div class="work-list">
-          <div class="work">
-            <img src="images/IMG_8610 (1).jpg" />
-            <div class="layer">
-              <h3>LED Temp-Humidity Indicator Project</h3>
-              <p>
-                An Arduino-based system designed to monitor temperature and
-                humidity using a DHT11 sensor.
-              </p>
-              <a
-                href="https://github.com/NathanielRecto/Bank-Account-Application"
-                ><i class="fa-solid fa-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-          <div class="work">
-            <img src="images/404106ee5a_50185170_fpga.jpg" />
-            <div class="layer">
-              <h3>General-Purpose 8-Bit Processor Design</h3>
-              <p>
-                FPGA-based ALU core design and integration for diverse
-                arithmetic/logical operations on 8-bit inputs.
-              </p>
-              <a
-                href="https://github.com/NathanielRecto/GeneralPurpose8-BitProcessorDesign"
-                ><i class="fa-solid fa-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-          <div class="work">
-            <img src="images/single-stage-bb-test (1).jpg" />
-            <div class="layer">
-              <h3>Multistage Amplifier Design</h3>
-              <p>
-                Designed and simulated a single-supply, multistage, inverting
-                transistor amplifier that adhere certain specifications, using
-                Multisim.
-              </p>
-              <a
-                href="https://github.com/NathanielRecto/Multistage-Amplifier-Design"
-                ><i class="fa-solid fa-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <a href="https://github.com/NathanielRecto/" class="btn">See More</a>
-      </div>
-    </div>
-    <!--Contact-->
-    <div id="contact">
-      <div class="contact">
+
+        <a href="#about" class="scroll-cue" aria-label="Scroll to About"><span></span></a>
+      </section>
+
+      <!-- ========== About / timeline ========== -->
+      <section id="about" class="section">
         <div class="container">
-          <div class="row">
-            <div class="contact-left">
-              <h1 class="sub-title">Contact Me</h1>
-              <p><i class="fa-solid fa-paper-plane"></i> nrecto@torontomu.ca</p>
-              <p><i class="fa-solid fa-phone"></i> (905)-409-3880</p>
-              <div class="social-icons">
-                <a href="https://github.com/NathanielRecto/"
-                  ><i class="fa-brands fa-github"></i
-                ></a>
-                <a href="https://www.linkedin.com/in/nathaniel-recto/"
-                  ><i class="fa-brands fa-linkedin"></i
-                ></a>
+          <p class="eyebrow reveal">About</p>
+          <h2 class="section-title reveal">
+            Computer engineer.<br />
+            <span class="grad">Always building.</span>
+          </h2>
+          <p class="section-lede reveal">
+            I studied Computer Engineering at Toronto Metropolitan University and like working across the
+            whole stack: circuits and FPGAs at the bottom, machine learning and apps at the top. Here's the
+            timeline.
+          </p>
+
+          <div class="timeline-wrap" id="timeline">
+            <span class="timeline-progress" aria-hidden="true"></span>
+            <ol class="timeline">
+              <li class="tl-item reveal">
+                <div class="tl-head">
+                  <h3>Started Computer Engineering at TMU</h3>
+                  <time>Sep 2022</time>
+                </div>
+                <p>Digital systems, circuits, data structures and object-oriented design: the foundation for everything below.</p>
+              </li>
+              <li class="tl-item reveal">
+                <div class="tl-head">
+                  <h3>Operations Support at Enercare</h3>
+                  <time>Summers 2024 &amp; 2025</time>
+                </div>
+                <p>First professional role, and asked back for a second summer. Processed contractor payments, invoices and work orders, cutting processing time by 20%.</p>
+              </li>
+              <li class="tl-item reveal">
+                <div class="tl-head">
+                  <h3>Went deep on hardware &amp; systems</h3>
+                  <time>2023 – 2026</time>
+                </div>
+                <p>An 8-bit processor, a cache controller and a VGA Pong game in VHDL, an FPGA/ARM MD5 system-on-chip, an ARM media center and a P2P file-sharing network in C.</p>
+              </li>
+              <li class="tl-item reveal">
+                <div class="tl-head">
+                  <h3>Capstone: Drowsy Driver Detection</h3>
+                  <time>2025 – 2026</time>
+                </div>
+                <p>Team of four. An Android app that spots driver fatigue in real time with MediaPipe and two on-device MobileNetV2 models.</p>
+              </li>
+              <li class="tl-item reveal">
+                <div class="tl-head">
+                  <h3>B.Eng. Computer Engineering, TMU</h3>
+                  <time>Class of 2026</time>
+                </div>
+                <p>Wrapped up the degree with systems-on-chip, embedded systems and a full capstone build.</p>
+              </li>
+              <li class="tl-item reveal">
+                <div class="tl-head">
+                  <h3>Shipped PulseCheck</h3>
+                  <time>Oct 2026</time>
+                </div>
+                <p>An end-to-end heart-disease risk model and Flask web app, tuned to catch 99% of sick patients in a held-out test set.</p>
+              </li>
+              <li class="tl-item reveal">
+                <div class="tl-head">
+                  <h3>Basketball Shot Tracker, live on iPhone</h3>
+                  <time>Oct 2026</time>
+                </div>
+                <p>Computer vision that calls every shot made or missed: 85.6% right in a gym it had never seen, and running natively on an iPhone 11.</p>
+              </li>
+            </ol>
+          </div>
+
+          <ul class="chips reveal">
+            <li><svg class="ico"><use href="#i-pin" /></svg> Whitby, ON</li>
+            <li><svg class="ico"><use href="#i-cap" /></svg> B.Eng. Computer Engineering · TMU</li>
+            <li class="chip-accent"><svg class="ico"><use href="#i-briefcase" /></svg> Open to ML, CV &amp; software roles</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== Experience / education ========== -->
+      <section id="experience" class="section">
+        <div class="container">
+          <p class="eyebrow reveal">Experience</p>
+          <h2 class="section-title reveal">
+            Work &amp;<br />
+            <span class="grad">education.</span>
+          </h2>
+
+          <div class="accordion">
+            <article class="acc-item open reveal">
+              <button class="acc-head" type="button" aria-expanded="true" aria-controls="acc-enercare">
+                <span class="acc-dot" aria-hidden="true"></span>
+                <span class="acc-title">
+                  <strong>Enercare</strong>
+                  <span class="acc-role">Operations Support</span>
+                </span>
+                <span class="acc-meta">May–Aug 2024 · May–Aug 2025 · Markham, ON</span>
+                <svg class="ico acc-chev"><use href="#i-chevron" /></svg>
+              </button>
+              <div class="acc-body" id="acc-enercare">
+                <div class="acc-inner">
+                  <div class="acc-content">
+                    <ul class="bullets">
+                      <li>Resolved HVAC contract problems by collaborating with <span class="hl">cross-functional teams</span> in energy advisory, sales, management, and sales support, helping maintain installation and service operations.</li>
+                      <li>Processed contractor payments, invoices, and work orders in <span class="hl">GERS, Clarify, and MS Office</span>, reducing processing time by <span class="hl">20%</span> through accurate record updates.</li>
+                      <li>Reduced <span class="hl">billing documentation errors</span> by reviewing rental extras, district extras, equipment exchanges, installs, and removals and updating contract records.</li>
+                      <li>Coordinated administrative requests and escalations as the key team contact, using tracked follow-ups to increase business-support productivity by <span class="hl">15%</span>.</li>
+                    </ul>
+                    <ul class="tags">
+                      <li>GERS</li>
+                      <li>Clarify</li>
+                      <li>MS Office</li>
+                      <li>Invoicing</li>
+                      <li>Operations</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <a
-                href="images/Nathaniel Recto - Comp Eng Resume (2).docx (2).pdf"
-                download
-                class="btn btn2"
-                >Download CV</a
-              >
+            </article>
+
+            <article class="acc-item reveal">
+              <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-tmu">
+                <span class="acc-dot" aria-hidden="true"></span>
+                <span class="acc-title">
+                  <strong>Toronto Metropolitan University</strong>
+                  <span class="acc-role">B.Eng. Computer Engineering</span>
+                </span>
+                <span class="acc-meta">Sep 2022 – May 2026 · Toronto, ON</span>
+                <svg class="ico acc-chev"><use href="#i-chevron" /></svg>
+              </button>
+              <div class="acc-body" id="acc-tmu">
+                <div class="acc-inner">
+                  <div class="acc-content">
+                    <ul class="bullets">
+                      <li><span class="hl">Capstone:</span> real-time Driver Drowsiness Detection on Android, built with a team of four (eye-state model 99.17% accurate, yawn model 96.18%).</li>
+                      <li>Built an <span class="hl">HPS/FPGA MD5 system-on-chip</span> in Systems-on-Chip Design and an <span class="hl">ARM media center</span> in Embedded Systems Design.</li>
+                      <li>Relevant coursework: Digital Systems, Systems-on-Chip Design, Embedded Systems Design, Engineering Algorithms &amp; Data Structures, Software Systems, Electronic Circuits, Object-Oriented Engineering Analysis &amp; Design.</li>
+                    </ul>
+                    <ul class="tags">
+                      <li>VHDL</li>
+                      <li>C / C++</li>
+                      <li>Java</li>
+                      <li>Embedded</li>
+                      <li>FPGA</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Skills ========== -->
+      <section id="skills" class="section">
+        <div class="container">
+          <p class="eyebrow reveal">Skills</p>
+          <h2 class="section-title reveal">
+            The<br />
+            <span class="grad">toolbox.</span>
+          </h2>
+
+          <div class="skills-grid">
+            <div class="terminal reveal">
+              <div class="term-bar" aria-hidden="true">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="term-title">nathaniel@tmu: ~/skills</span>
+              </div>
+              <div class="term-body">
+                <p class="term-cmd"><span class="term-prompt">~</span> skills --list</p>
+                <dl class="term-list">
+                  <div><dt>languages</dt><dd>Python · C/C++ · Swift · Kotlin · Java · SQL · JavaScript · VHDL · Assembly · MATLAB</dd></div>
+                  <div><dt>ml / cv</dt><dd>PyTorch · TensorFlow · YOLOv8 · OpenCV · MediaPipe · scikit-learn · XGBoost · TensorFlow Lite · Core ML · Pandas · NumPy</dd></div>
+                  <div><dt>apps / web</dt><dd>SwiftUI · Android · Flask · SQLAlchemy · Docker · HTML/CSS · JavaFX</dd></div>
+                  <div><dt>hardware</dt><dd>FPGA (Cyclone, Spartan-3E) · Quartus · Xilinx ISE · ARM Cortex-M3 · Arduino · NI Multisim</dd></div>
+                  <div><dt>tools</dt><dd>Git · GitHub Actions · pytest · Linux · VS Code</dd></div>
+                </dl>
+                <p class="term-cmd"><span class="term-prompt">~</span> <span class="term-cursor"></span></p>
+              </div>
+            </div>
+
+            <div class="stats">
+              <div class="stat reveal">
+                <p class="stat-num"><span data-count="13">13</span><span class="suffix">+</span></p>
+                <p class="stat-label">Projects built &amp; on GitHub</p>
+              </div>
+              <div class="stat reveal">
+                <p class="stat-num"><span data-count="85.6" data-decimals="1">85.6</span><span class="suffix">%</span></p>
+                <p class="stat-label">Shots called right in a gym the model never saw</p>
+              </div>
+              <div class="stat reveal">
+                <p class="stat-num"><span data-count="99">99</span><span class="suffix">%</span></p>
+                <p class="stat-label">Recall on held-out heart-disease patients</p>
+              </div>
+              <div class="stat reveal">
+                <p class="stat-num"><span class="prefix">~</span><span data-count="30">30</span><span class="suffix">/s</span></p>
+                <p class="stat-label">Live detections on an iPhone 11</p>
+              </div>
+              <div class="stat exploring reveal">
+                <p class="exploring-label">currently exploring <svg class="ico"><use href="#i-arrow-right" /></svg></p>
+                <p>On-device ML · Core ML · real-time video</p>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- ========== Projects ========== -->
+      <section id="projects" class="projects">
+        <!-- Project 01 -->
+        <article class="project" style="--p-rgb: 255, 146, 72">
+          <div class="container">
+            <p class="project-index reveal">Projects · 01</p>
+            <div class="project-grid">
+              <div class="project-media reveal">
+                <div class="media-stack">
+                  <figure class="frame">
+                    <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><em>shot_tracker · real gym footage</em></div>
+                    <img
+                      src="https://raw.githubusercontent.com/NathanielRecto/Basketball-Shot-Tracker/main/docs/images/demo_real.webp"
+                      alt="Real gym footage: the tracker follows the ball and calls each shot made or missed while keeping score"
+                      width="720"
+                      height="405"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure class="frame frame-secondary">
+                    <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><em>iPhone app · live</em></div>
+                    <img
+                      src="https://raw.githubusercontent.com/NathanielRecto/Basketball-Shot-Tracker-iOS/main/docs/images/live_made.jpg"
+                      alt="The iPhone app showing a MADE banner after a shot, with the running score 3 of 13"
+                      width="1792"
+                      height="828"
+                      loading="lazy"
+                    />
+                  </figure>
+                </div>
+              </div>
+
+              <div class="project-info reveal">
+                <p class="kicker">Computer vision · iOS · live on device</p>
+                <h3>Basketball Shot Tracker</h3>
+                <div class="project-card">
+                  <p>
+                    Watches basketball video from a phone on a tripod, finds every shot and calls it
+                    <strong>made or missed</strong> with the reason. I trained a <strong>YOLOv8</strong> ball-and-hoop
+                    detector and wrote the ball tracker and shot judge (arc fit, rim crossing, rim and net checks) from scratch.
+                  </p>
+                  <p>
+                    Scored <strong>85.6% end-to-end</strong> on 90 blind-labelled shots in a gym the system had never
+                    seen, with the code frozen and fingerprinted before a single scoring run. It found 87 of 90 shots and invented none.
+                  </p>
+                  <p>
+                    Then ported it to a <strong>native Swift iPhone app</strong> (SwiftUI, Core ML on the Neural Engine) that
+                    runs live at <strong>~30 detections per second</strong> and is verified to match the Python system exactly.
+                  </p>
+                </div>
+                <ul class="tags">
+                  <li>Python</li>
+                  <li>YOLOv8</li>
+                  <li>OpenCV</li>
+                  <li>MediaPipe</li>
+                  <li>NumPy</li>
+                  <li>Swift</li>
+                  <li>SwiftUI</li>
+                  <li>Core ML</li>
+                  <li>GitHub Actions</li>
+                </ul>
+                <div class="project-links">
+                  <a class="btn btn-solid" href="https://github.com/NathanielRecto/Basketball-Shot-Tracker" target="_blank" rel="noopener">
+                    <svg class="ico ico-fill"><use href="#i-github" /></svg> Research repo
+                  </a>
+                  <a class="btn btn-ghost" href="https://github.com/NathanielRecto/Basketball-Shot-Tracker-iOS" target="_blank" rel="noopener">
+                    iPhone app <svg class="ico"><use href="#i-arrow-ur" /></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 02 -->
+        <article class="project flip" style="--p-rgb: 251, 113, 133">
+          <div class="container">
+            <p class="project-index reveal">Projects · 02</p>
+            <div class="project-grid">
+              <div class="project-media reveal">
+                <figure class="frame">
+                  <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><em>pulsecheck · flask app</em></div>
+                  <img
+                    src="https://raw.githubusercontent.com/NathanielRecto/Heart-Disease-Risk-Prediction/main/docs/screenshots/home-dark.png"
+                    alt="PulseCheck home page: Spot heart disease risk early, with stats for patients, models and ROC-AUC"
+                    width="1280"
+                    height="1020"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+
+              <div class="project-info reveal">
+                <p class="kicker">Machine learning · web app</p>
+                <h3>PulseCheck</h3>
+                <div class="project-card">
+                  <p>
+                    End-to-end heart-disease risk prediction: cleaned a real <strong>multi-hospital dataset</strong>,
+                    compared three models and served the winner as a <strong>Flask web app</strong> with a 4-step
+                    assessment, per-prediction explanations and private per-visitor history.
+                  </p>
+                  <p>
+                    Tuned for the metric that matters: <strong>99% recall</strong> (101 of 102 sick patients caught)
+                    on a held-out test set of 184, ROC-AUC 0.90. Moving the cutoff from 0.50 to 0.18 cut missed
+                    patients from <strong>13 to 1</strong>.
+                  </p>
+                  <p>
+                    Calibrated the probabilities so "18% risk" actually means 18%, and packaged everything with Docker.
+                  </p>
+                </div>
+                <ul class="tags">
+                  <li>Python</li>
+                  <li>scikit-learn</li>
+                  <li>XGBoost</li>
+                  <li>Pandas</li>
+                  <li>Flask</li>
+                  <li>SQLAlchemy</li>
+                  <li>Docker</li>
+                </ul>
+                <div class="project-links">
+                  <a class="btn btn-solid" href="https://github.com/NathanielRecto/Heart-Disease-Risk-Prediction" target="_blank" rel="noopener">
+                    <svg class="ico ico-fill"><use href="#i-github" /></svg> GitHub repo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 03 -->
+        <article class="project" style="--p-rgb: 52, 211, 153">
+          <div class="container">
+            <p class="project-index reveal">Projects · 03</p>
+            <div class="project-grid">
+              <div class="project-media reveal">
+                <figure class="frame">
+                  <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><em>drowsy_driver · android</em></div>
+                  <img
+                    src="https://raw.githubusercontent.com/NathanielRecto/Driver-Drowsy-Detection-App/master/app/src/main/assets/app_screens.png"
+                    alt="Android app screens: start screen, live camera monitoring with facial measurements, and session analytics"
+                    width="833"
+                    height="609"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+
+              <div class="project-info reveal">
+                <p class="kicker">Capstone · Android · on-device ML</p>
+                <h3>Drowsy Driver Detection</h3>
+                <div class="project-card">
+                  <p>
+                    A real-time Android app that watches the driver through the front camera and sounds an alarm when
+                    fatigue builds up, tracking <strong>eye closure, yawning and head tilt</strong>.
+                  </p>
+                  <p>
+                    <strong>MediaPipe</strong> face landmarks drive eye and mouth aspect ratios, and two
+                    <strong>MobileNetV2</strong> models (TensorFlow Lite) classify cropped eyes and mouths. They were trained on a
+                    custom <strong>16,000-image</strong> dataset we collected with our own labelling tool: 99.17% accuracy on
+                    eye state and 96.18% on yawns.
+                  </p>
+                  <p>
+                    A weighted multi-cue score keeps alerts stable even when one cue struggles (glasses, dim light).
+                    Built with a team of four for the TMU engineering capstone.
+                  </p>
+                </div>
+                <ul class="tags">
+                  <li>Kotlin</li>
+                  <li>Android</li>
+                  <li>CameraX</li>
+                  <li>MediaPipe</li>
+                  <li>TensorFlow Lite</li>
+                  <li>MobileNetV2</li>
+                </ul>
+                <div class="project-links">
+                  <a class="btn btn-solid" href="https://github.com/NathanielRecto/Driver-Drowsy-Detection-App" target="_blank" rel="noopener">
+                    <svg class="ico ico-fill"><use href="#i-github" /></svg> GitHub repo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- More projects -->
+        <div class="section more-projects">
+          <div class="container">
+            <p class="eyebrow reveal">More projects</p>
+            <h2 class="section-title reveal">
+              From transistors<br />
+              <span class="grad">to sockets.</span>
+            </h2>
+
+            <div class="filters reveal" role="group" aria-label="Filter projects">
+              <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter" type="button" data-filter="hardware" aria-pressed="false">Hardware &amp; FPGA</button>
+              <button class="filter" type="button" data-filter="embedded" aria-pressed="false">Embedded</button>
+              <button class="filter" type="button" data-filter="software" aria-pressed="false">Software</button>
+            </div>
+
+            <ul class="card-grid" id="card-grid">
+              <li class="card reveal" data-cat="hardware">
+                <a href="https://github.com/NathanielRecto/HPS-FPGA-Based-MD5-SoC" target="_blank" rel="noopener">
+                  <span class="card-top">FPGA · SoC <svg class="ico"><use href="#i-arrow-ur" /></svg></span>
+                  <h3>HPS/FPGA MD5 System-on-Chip</h3>
+                  <p>Connected a 32-engine MD5 hashing core on a Cyclone V FPGA to an ARM CPU running Yocto Linux through custom Avalon-MM interfaces, then benchmarked serial vs. parallel hashing.</p>
+                  <ul class="tags"><li>VHDL</li><li>C</li><li>Yocto Linux</li><li>DE1-SoC</li></ul>
+                </a>
+              </li>
+              <li class="card reveal" data-cat="hardware">
+                <a href="https://github.com/NathanielRecto/Cache-Controller" target="_blank" rel="noopener">
+                  <span class="card-top">Computer architecture <svg class="ico"><use href="#i-arrow-ur" /></svg></span>
+                  <h3>Cache Controller</h3>
+                  <p>A cache controller between a CPU and SDRAM: tag, valid and dirty-bit checks, block loads and write-backs, all driven by a five-state FSM.</p>
+                  <ul class="tags"><li>VHDL</li><li>FSM</li><li>SRAM / SDRAM</li></ul>
+                </a>
+              </li>
+              <li class="card reveal" data-cat="hardware">
+                <a href="https://github.com/NathanielRecto/FPGA-VGA-Pong-Processor" target="_blank" rel="noopener">
+                  <span class="card-top">FPGA · Video <svg class="ico"><use href="#i-arrow-ur" /></svg></span>
+                  <h3>FPGA VGA Pong Processor</h3>
+                  <p>A Pong game processor on a Spartan-3E: 640×480 VGA timing at a 25 MHz pixel clock, real-time graphics, paddles, collisions and goals.</p>
+                  <ul class="tags"><li>VHDL</li><li>Spartan-3E</li><li>Xilinx ISE</li></ul>
+                </a>
+              </li>
+              <li class="card reveal" data-cat="hardware">
+                <a href="https://github.com/NathanielRecto/GeneralPurpose8-BitProcessorDesign" target="_blank" rel="noopener">
+                  <span class="card-top">Digital design <svg class="ico"><use href="#i-arrow-ur" /></svg></span>
+                  <h3>General-Purpose 8-bit Processor</h3>
+                  <p>Input latches, a Moore FSM, a 4-to-16 decoder and an ALU on a Cyclone II, with arithmetic and logic results shown on 7-segment displays.</p>
+                  <ul class="tags"><li>VHDL</li><li>Quartus II</li><li>Cyclone II</li></ul>
+                </a>
+              </li>
+              <li class="card reveal" data-cat="embedded">
+                <a href="https://github.com/NathanielRecto/MCB1700-Embedded-Media-Center" target="_blank" rel="noopener">
+                  <span class="card-top">Embedded · ARM <svg class="ico"><use href="#i-arrow-ur" /></svg></span>
+                  <h3>MCB1700 Embedded Media Center</h3>
+                  <p>A joystick-driven media center on an ARM Cortex-M3 board: photo gallery, USB audio player with potentiometer volume, plus Snake and Blackjack.</p>
+                  <ul class="tags"><li>C</li><li>Keil µVision</li><li>LPC1768</li></ul>
+                </a>
+              </li>
+              <li class="card reveal" data-cat="embedded">
+                <a href="https://github.com/NathanielRecto/Temperature_and_Humidity_sensor_with_LED_Lights" target="_blank" rel="noopener">
+                  <span class="card-top">Embedded · Sensors <svg class="ico"><use href="#i-arrow-ur" /></svg></span>
+                  <h3>LED Temp-Humidity Indicator</h3>
+                  <p>An Arduino monitor that shows DHT11 readings on a 16×2 LCD and lights red, blue or white LEDs to compare the temperature against 22 °C.</p>
+                  <ul class="tags"><li>C++</li><li>Arduino</li><li>DHT11</li></ul>
+                </a>
+              </li>
+              <li class="card reveal" data-cat="software">
+                <a href="https://github.com/NathanielRecto/Distributed-P2P-File-Sharing-System" target="_blank" rel="noopener">
+                  <span class="card-top">Networking <svg class="ico"><use href="#i-arrow-ur" /></svg></span>
+                  <h3>Distributed P2P File Sharing</h3>
+                  <p>A UDP index server tracks who has which file. Peers download directly from each other over TCP, then become sources themselves.</p>
+                  <ul class="tags"><li>C</li><li>Sockets</li><li>UDP / TCP</li></ul>
+                </a>
+              </li>
+              <li class="card reveal" data-cat="software">
+                <a href="https://github.com/NathanielRecto/Bank-Account-Application" target="_blank" rel="noopener">
+                  <span class="card-top">Desktop app <svg class="ico"><use href="#i-arrow-ur" /></svg></span>
+                  <h3>Bank Account Application</h3>
+                  <p>A JavaFX banking app with login, transactions and live balances, with customer membership tiers modelled using the State design pattern.</p>
+                  <ul class="tags"><li>Java</li><li>JavaFX</li><li>OOP / UML</li></ul>
+                </a>
+              </li>
+              <li class="card reveal" data-cat="hardware">
+                <a href="https://github.com/NathanielRecto/Multistage-Amplifier-Design" target="_blank" rel="noopener">
+                  <span class="card-top">Analog circuits <svg class="ico"><use href="#i-arrow-ur" /></svg></span>
+                  <h3>Multistage Amplifier Design</h3>
+                  <p>A single-supply, multistage inverting transistor amplifier, sized by hand calculation and refined in simulation to hit its specs.</p>
+                  <ul class="tags"><li>NI Multisim</li><li>Analog design</li></ul>
+                </a>
+              </li>
+            </ul>
+
+            <div class="center reveal">
+              <a class="btn btn-outline" href="https://github.com/NathanielRecto?tab=repositories" target="_blank" rel="noopener">
+                See everything on GitHub <svg class="ico"><use href="#i-arrow-ur" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Contact ========== -->
+      <section id="contact" class="section contact">
+        <div class="container contact-grid">
+          <div class="contact-intro">
+            <p class="eyebrow reveal">Contact</p>
+            <h2 class="section-title reveal">
+              Let's build<br />
+              <span class="grad">something real.</span>
+            </h2>
+            <p class="section-lede reveal">
+              Open to roles in machine learning, computer vision and software, or just a good conversation
+              about tech (or basketball).
+            </p>
+            <ul class="contact-list reveal">
+              <li>
+                <a href="mailto:nrecto.0225@gmail.com">
+                  <svg class="ico"><use href="#i-mail" /></svg>
+                  <span>nrecto.0225@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/nathaniel-recto/" target="_blank" rel="noopener">
+                  <svg class="ico ico-fill"><use href="#i-linkedin" /></svg>
+                  <span>linkedin.com/in/nathaniel-recto</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/NathanielRecto" target="_blank" rel="noopener">
+                  <svg class="ico ico-fill"><use href="#i-github" /></svg>
+                  <span>github.com/NathanielRecto</span>
+                </a>
+              </li>
+              <li>
+                <a href="assets/Nathaniel-Recto-Resume.pdf" download>
+                  <svg class="ico"><use href="#i-file" /></svg>
+                  <span>Download résumé (PDF)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <form class="contact-form reveal" id="contact-form" novalidate>
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" required></textarea>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">
+              Send message <svg class="ico"><use href="#i-arrow-right" /></svg>
+            </button>
+            <p class="form-note" id="form-note" aria-live="polite">Opens your email app with the message filled in.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== Footer ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a href="#home" class="logo">nathaniel<span>.</span></a>
+            <p class="footer-tag">Computer engineer. Always building.</p>
+          </div>
+          <nav class="footer-nav" aria-label="Footer">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div class="footer-social">
+            <a class="icon-btn" href="https://www.linkedin.com/in/nathaniel-recto/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg class="ico ico-fill"><use href="#i-linkedin" /></svg>
+            </a>
+            <a class="icon-btn" href="https://github.com/NathanielRecto" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg class="ico ico-fill"><use href="#i-github" /></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© <span id="year">2026</span> Nathaniel Recto</p>
+          <a href="#home" class="back-top">Back to top <svg class="ico"><use href="#i-arrow-up" /></svg></a>
+        </div>
       </div>
-    </div>
-    <!-- Tabs Management Script -->
-    <script>
-      var tablinks = document.getElementsByClassName("tab-links");
-      var tabcontents = document.getElementsByClassName("tab-contents");
+    </footer>
 
-      function opentab(tabname) {
-        for (var tablink of tablinks) {
-          tablink.classList.remove("active-link");
-        }
-        for (var tabcontent of tabcontents) {
-          tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-      }
-    </script>
-    <!-- Side Menu Script -->
-    <script>
-      var sidemenu = document.getElementById("sidemenu");
-
-      function openmenu() {
-        sidemenu.style.right = "0";
-      }
-      function closemenu() {
-        sidemenu.style.right = "-200px";
-      }
-    </script>
+    <!-- ========== "whoami" terminal popup (opened from the hero photo) ========== -->
+    <dialog class="terminal-dialog" id="whoami" aria-labelledby="whoami-title">
+      <div class="terminal">
+        <div class="term-bar">
+          <button class="dot r term-close" type="button" aria-label="Close" data-close></button>
+          <span class="dot y" aria-hidden="true"></span><span class="dot g" aria-hidden="true"></span>
+          <span class="term-title" id="whoami-title">nathaniel@tmu: ~/profile.txt</span>
+        </div>
+        <div class="term-body" id="whoami-body"></div>
+      </div>
+    </dialog>
   </body>
 </html>
