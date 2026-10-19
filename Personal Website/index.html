@@ -166,7 +166,7 @@
             </p>
 
             <p class="hero-lede">
-              I build things that see, sense and compute: from YOLO models running live on an iPhone to
+              I build things that see, hear and compute: from YOLO models running live on an iPhone to
               processors written in VHDL.
             </p>
 
@@ -263,6 +263,13 @@
                   <time>Oct 2026</time>
                 </div>
                 <p>Computer vision that calls every shot made or missed: 85.6% right in a gym it had never seen, and running natively on an iPhone 11.</p>
+              </li>
+              <li class="tl-item reveal">
+                <div class="tl-head">
+                  <h3>MELD Realtime Emotion</h3>
+                  <time>Oct 2026</time>
+                </div>
+                <p>Emotion recognition from words and tone of voice, live on one 6 GB GPU: a voice tag 67 ms after you stop talking and the first reply word in 1.33 s.</p>
               </li>
             </ol>
           </div>
@@ -369,6 +376,7 @@
                 <dl class="term-list">
                   <div><dt>languages</dt><dd>Python · C/C++ · Swift · Kotlin · Java · SQL · JavaScript · VHDL · Assembly · MATLAB</dd></div>
                   <div><dt>ml / cv</dt><dd>PyTorch · TensorFlow · YOLOv8 · OpenCV · MediaPipe · scikit-learn · XGBoost · TensorFlow Lite · Core ML · Pandas · NumPy</dd></div>
+                  <div><dt>speech/nlp</dt><dd>Whisper · WavLM · RoBERTa · Hugging Face Transformers · Silero VAD · llama.cpp</dd></div>
                   <div><dt>apps / web</dt><dd>SwiftUI · Android · Flask · SQLAlchemy · Docker · HTML/CSS · JavaFX</dd></div>
                   <div><dt>hardware</dt><dd>FPGA (Cyclone, Spartan-3E) · Quartus · Xilinx ISE · ARM Cortex-M3 · Arduino · NI Multisim</dd></div>
                   <div><dt>tools</dt><dd>Git · GitHub Actions · pytest · Linux · VS Code</dd></div>
@@ -379,7 +387,7 @@
 
             <div class="stats">
               <div class="stat reveal">
-                <p class="stat-num"><span data-count="13">13</span><span class="suffix">+</span></p>
+                <p class="stat-num"><span data-count="14">14</span><span class="suffix">+</span></p>
                 <p class="stat-label">Projects built &amp; on GitHub</p>
               </div>
               <div class="stat reveal">
@@ -396,7 +404,7 @@
               </div>
               <div class="stat exploring reveal">
                 <p class="exploring-label">currently exploring <svg class="ico"><use href="#i-arrow-right" /></svg></p>
-                <p>On-device ML · Core ML · real-time video</p>
+                <p>On-device ML · real-time speech &amp; video</p>
               </div>
             </div>
           </div>
@@ -478,9 +486,72 @@
         </article>
 
         <!-- Project 02 -->
-        <article class="project flip" style="--p-rgb: 251, 113, 133">
+        <article class="project flip" style="--p-rgb: 192, 132, 252">
           <div class="container">
             <p class="project-index reveal">Projects · 02</p>
+            <div class="project-grid">
+              <div class="project-media reveal">
+                <figure class="frame">
+                  <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><em>meld_realtime · live mic turn</em></div>
+                  <img
+                    src="https://raw.githubusercontent.com/NathanielRecto/Meld-RealTime-Emotion/main/docs/img/live_turn14.png"
+                    alt="Web demo of one live microphone turn: the words 'It's 11 o'clock!' read as joy, but the angry voice makes the final tag anger at 70%, followed by Pip's streamed reply"
+                    width="725"
+                    height="494"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+
+              <div class="project-info reveal">
+                <p class="kicker">Speech · multimodal ML · real-time</p>
+                <h3>MELD Realtime Emotion</h3>
+                <div class="project-card">
+                  <p>
+                    A real-time prototype for an emotion-aware character robot. It listens to a person, works out how
+                    they feel from <strong>what they say and how they say it</strong>, and streams back a short reply,
+                    all running locally on one 6 GB consumer GPU.
+                  </p>
+                  <p>
+                    Each turn goes from Silero VAD to a <strong>voice-only tag</strong> (WavLM), then Whisper
+                    speech-to-text, then a final tag from words, voice and the last 3 turns (3 fine-tuned
+                    <strong>RoBERTa fusion models</strong>), then a reply streamed from Qwen2.5-1.5B via llama.cpp.
+                  </p>
+                  <p>
+                    Scored <strong>0.651 weighted F1</strong> on the MELD test set (the always-"neutral" floor is 0.313).
+                    Training on CREMA-D lifted tone-following on unseen speakers from 0.127 to
+                    <strong>0.663 balanced accuracy</strong>. At p95, the voice tag lands in <strong>67 ms</strong>
+                    and the first reply word in <strong>1.33 s</strong>.
+                  </p>
+                </div>
+                <ul class="tags">
+                  <li>Python</li>
+                  <li>PyTorch</li>
+                  <li>Transformers</li>
+                  <li>WavLM</li>
+                  <li>RoBERTa</li>
+                  <li>Whisper</li>
+                  <li>llama.cpp</li>
+                  <li>FastAPI</li>
+                  <li>WebSockets</li>
+                </ul>
+                <div class="project-links">
+                  <a class="btn btn-solid" href="https://github.com/NathanielRecto/Meld-RealTime-Emotion" target="_blank" rel="noopener">
+                    <svg class="ico ico-fill"><use href="#i-github" /></svg> GitHub repo
+                  </a>
+                  <a class="btn btn-ghost" href="https://github.com/NathanielRecto/Meld-RealTime-Emotion/blob/main/docs/DESIGN.md" target="_blank" rel="noopener">
+                    Design doc <svg class="ico"><use href="#i-arrow-ur" /></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 03 -->
+        <article class="project" style="--p-rgb: 251, 113, 133">
+          <div class="container">
+            <p class="project-index reveal">Projects · 03</p>
             <div class="project-grid">
               <div class="project-media reveal">
                 <figure class="frame">
@@ -532,10 +603,10 @@
           </div>
         </article>
 
-        <!-- Project 03 -->
-        <article class="project" style="--p-rgb: 52, 211, 153">
+        <!-- Project 04 -->
+        <article class="project flip" style="--p-rgb: 52, 211, 153">
           <div class="container">
-            <p class="project-index reveal">Projects · 03</p>
+            <p class="project-index reveal">Projects · 04</p>
             <div class="project-grid">
               <div class="project-media reveal">
                 <figure class="frame">

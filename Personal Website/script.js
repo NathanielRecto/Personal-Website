@@ -195,7 +195,7 @@
     { type: "out", text: "Nathaniel Recto · Computer Engineer, TMU" },
     { type: "gap" },
     { type: "cmd", text: "cat profile.txt" },
-    { type: "kv", k: "focus", v: "ML · computer vision · embedded" },
+    { type: "kv", k: "focus", v: "ML · computer vision · speech · embedded" },
     { type: "kv", k: "building", v: "a basketball shot tracker for iPhone" },
     { type: "kv", k: "stack", v: "Python · C/C++ · Swift · VHDL" },
     { type: "kv", k: "looking for", v: "ML, CV & software roles" },
